@@ -83,6 +83,15 @@ La sécurité est prise en compte **dès les premières étapes du projet**, con
 - MySQL / MariaDB
 - Serveur web (Apache ou Nginx)
 
+## Base de données
+
+1. Créer une base de données (ex: `blog`)
+2. Importer le schéma :
+
+```bash
+mysql -u root -p blog < database/schema.sql
+```
+
 ### Étapes d’installation
 
 1. Cloner le dépôt :

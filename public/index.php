@@ -32,3 +32,22 @@ if (isset($_SESSION['last_activity']) && ($now - (int)$_SESSION['last_activity']
 }
 
 $_SESSION['last_activity'] = $now;
+
+/*
+ *
+ * Parti de test pour la connection BDD
+ *
+ */
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->safeLoad();
+
+$dbConfig = require dirname(__DIR__) . '/config/database.php';
+
+$database = new App\Service\Database($dbConfig);
+$pdo = $database->pdo();
+
+$stmt = $pdo->query('SELECT 1');
+echo "DB connection OK";
