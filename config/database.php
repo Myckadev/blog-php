@@ -9,7 +9,7 @@ return [
         $_ENV['DB_NAME'] ?? 'blog'
     ),
     'user' => $_ENV['DB_USER'] ?? 'root',
-    'password' => $_ENV['DB_PASSWORD'] ?? '',
+    'password' => $_ENV['DB_PASS'] ?? '',
     'options' => [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,

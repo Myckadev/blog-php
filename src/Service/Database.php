@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service;
+namespace BlogPhp\Service;
 
 use PDO;
 
@@ -10,7 +10,12 @@ final class Database
 
     public function __construct(array $dbConfig)
     {
-        $this->pdo = new PDO(...$dbConfig);
+        $this->pdo = new PDO(
+            $dbConfig['dsn'],
+            $dbConfig['user'],
+            $dbConfig['password'],
+            $dbConfig['options']
+        );
     }
 
     public function pdo(): PDO
