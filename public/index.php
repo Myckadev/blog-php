@@ -46,7 +46,7 @@ $dotenv->safeLoad();
 
 $dbConfig = require dirname(__DIR__) . '/config/database.php';
 
-$database = new App\Service\Database($dbConfig);
+$database = new BlogPhp\Service\Database($dbConfig);
 $pdo = $database->pdo();
 
 $stmt = $pdo->query('SELECT 1');
